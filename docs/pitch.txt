@@ -1,0 +1,72 @@
+Pitch refinado — versão madura
+Nome do projeto
+SYLO
+Slogan
+Inteligência climática para proteger o futuro do café.
+Problema
+As mudanças climáticas estão afetando diretamente a produção global de café.
+Secas prolongadas, calor extremo, irregularidade das chuvas e novas pragas estão reduzindo a produtividade e aumentando os prejuízos no campo.
+E os mais afetados são os pequenos produtores, que muitas vezes ainda tomam decisões sem acesso a monitoramento climático inteligente ou tecnologias de agricultura de precisão. 
+Oportunidade
+O Brasil é o maior produtor de café do mundo e a agricultura familiar possui participação extremamente relevante nesse mercado, especialmente na produção de cafés especiais e sustentáveis. 
+Ao mesmo tempo:
+o agro está entrando na era da agricultura preditiva;
+sensores e satélites estão mais acessíveis;
+e produtores precisam cada vez mais tomar decisões baseadas em dados.
+Nossa solução
+O SYLO é uma plataforma de agricultura inteligente que combina:
+sensores IoT instalados no solo;
+dados meteorológicos;
+monitoramento via satélite;
+análise espacial;
+e inteligência artificial;
+para prever riscos climáticos, otimizar irrigação e auxiliar produtores de café na tomada de decisões mais rápidas, precisas e sustentáveis. 
+Como funciona
+Sensores IoT no campo
+Capturam em tempo real:
+umidade do solo;
+temperatura;
+luminosidade;
+condições ambientais da plantação.
+Integração com satélites
+Monitora:
+risco de seca;
+ondas de calor;
+vegetação;
+clima da região;
+comportamento ambiental da lavoura.
+Inteligência Artificial
+Transforma dados em:
+alertas inteligentes;
+previsões climáticas;
+recomendações de irrigação;
+previsão de produtividade;
+prevenção de perdas agrícolas.
+Diferencial
+O diferencial do SYLO é transformar dados em ações inteligentes.
+Enquanto muitas soluções apenas monitoram informações, o SYLO atua de forma preditiva:
+antecipando riscos;
+reduzindo desperdício de água;
+ajudando produtores a protegerem suas safras antes que os problemas aconteçam. 
+Impacto social e ambiental
+Nosso objetivo é democratizar o acesso à agricultura de precisão.
+Grandes fazendas já possuem tecnologias avançadas.Pequenos produtores ainda enfrentam dificuldades de acesso à tecnologia, crédito e monitoramento climático. 
+Com o SYLO, queremos levar inteligência climática acessível para produtores de café especial e agricultura familiar.
+Impacto esperado
+Com o SYLO, produtores poderão:
+reduzir perdas agrícolas;
+economizar água;
+aumentar produtividade;
+melhorar qualidade do café;
+tomar decisões baseadas em dados;
+produzir de forma mais sustentável.
+Visão de futuro
+O que estamos construindo hoje para plantações de café pode futuramente ser expandido para:
+outras culturas agrícolas;
+regiões com escassez hídrica;
+agricultura em ambientes extremos;
+e futuras operações agrícolas autônomas. 
+Frase final de impacto
+“O SYLO transforma dados climáticos e espaciais em decisões inteligentes para proteger o futuro da produção de café.”
+Ou uma mais emocional:
+“Queremos garantir que pequenos produtores consigam enfrentar as mudanças climáticas utilizando tecnologia acessível, inteligente e sustentável.”

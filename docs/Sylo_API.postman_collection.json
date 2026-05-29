@@ -1,0 +1,652 @@
+{
+  "info": {
+    "name": "Sylo - Smart Farming API",
+    "description": "Collection completa da API REST do Sylo - Plataforma de Agricultura Inteligente.\n\nInclui CRUD completo para: Fazendas, Talhões, Tipos de Cultura, Dispositivos IoT e Alertas.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Fazendas",
+      "description": "Gerenciamento de fazendas",
+      "item": [
+        {
+          "name": "Listar todas as fazendas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/farms",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "farms"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Buscar fazenda por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/farms/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "farms",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Criar nova fazenda",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Fazenda Nova Esperança\",\n  \"description\": \"Fazenda de trigo e aveia no sul do PR\",\n  \"city\": \"Ponta Grossa\",\n  \"state\": \"PR\",\n  \"latitude\": -25.0945,\n  \"longitude\": -50.1633\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/farms",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "farms"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Atualizar fazenda",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Fazenda Boa Vista (Atualizada)\",\n  \"description\": \"Fazenda de soja, milho e sorgo\",\n  \"city\": \"Ribeirão Preto\",\n  \"state\": \"SP\",\n  \"latitude\": -21.1767,\n  \"longitude\": -47.8208\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/farms/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "farms",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Excluir fazenda",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/farms/3",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "farms",
+                "3"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Talhões",
+      "description": "Gerenciamento de talhões/campos",
+      "item": [
+        {
+          "name": "Listar todos os talhões",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/fields",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "fields"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Buscar talhão por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/fields/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "fields",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar talhões por fazenda",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/fields/farm/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "fields",
+                "farm",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Criar novo talhão",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"farmId\": 1,\n  \"name\": \"Talhão A3\",\n  \"areaHectares\": 25.00,\n  \"latitude\": -21.1900,\n  \"longitude\": -47.8350,\n  \"status\": \"ACTIVE\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/fields",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "fields"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Atualizar talhão",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"farmId\": 1,\n  \"name\": \"Talhão A1 (Expandido)\",\n  \"areaHectares\": 65.00,\n  \"latitude\": -21.1800,\n  \"longitude\": -47.8300,\n  \"status\": \"ACTIVE\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/fields/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "fields",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Excluir talhão",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/fields/5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "fields",
+                "5"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tipos de Cultura",
+      "description": "Gerenciamento de tipos de cultura agrícola",
+      "item": [
+        {
+          "name": "Listar todos os tipos de cultura",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/crop-types",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "crop-types"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Buscar tipo de cultura por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/crop-types/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "crop-types",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Criar novo tipo de cultura",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Trigo\",\n  \"description\": \"Triticum aestivum - cereal de inverno\",\n  \"idealMinSoilMoisture\": 35.00,\n  \"idealMaxSoilMoisture\": 65.00,\n  \"idealMinTemperature\": 10.00,\n  \"idealMaxTemperature\": 24.00,\n  \"idealMinNdvi\": 0.45,\n  \"idealMaxNdvi\": 0.80\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/crop-types",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "crop-types"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Atualizar tipo de cultura",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Soja (Transgênica)\",\n  \"description\": \"Glycine max - variedade RR tolerante a herbicida\",\n  \"idealMinSoilMoisture\": 42.00,\n  \"idealMaxSoilMoisture\": 72.00,\n  \"idealMinTemperature\": 20.00,\n  \"idealMaxTemperature\": 32.00,\n  \"idealMinNdvi\": 0.58,\n  \"idealMaxNdvi\": 0.92\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/crop-types/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "crop-types",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Excluir tipo de cultura",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/crop-types/5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "crop-types",
+                "5"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dispositivos IoT",
+      "description": "Gerenciamento de sensores e dispositivos IoT no campo",
+      "item": [
+        {
+          "name": "Listar todos os dispositivos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/iot-devices",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "iot-devices"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Buscar dispositivo por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/iot-devices/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "iot-devices",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar dispositivos por talhão",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/iot-devices/field/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "iot-devices",
+                "field",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Cadastrar novo dispositivo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fieldId\": 2,\n  \"name\": \"Sensor Pluviômetro A2\",\n  \"deviceType\": \"RAIN_GAUGE\",\n  \"serialNumber\": \"RG-001-A2\",\n  \"status\": \"ONLINE\",\n  \"latitude\": -21.1860,\n  \"longitude\": -47.8255\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/iot-devices",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "iot-devices"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Atualizar dispositivo",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fieldId\": 1,\n  \"name\": \"Sensor Umidade Solo A1-1 (Calibrado)\",\n  \"deviceType\": \"SOIL_MOISTURE\",\n  \"serialNumber\": \"SM-001-A1\",\n  \"status\": \"ONLINE\",\n  \"latitude\": -21.1802,\n  \"longitude\": -47.8305\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/iot-devices/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "iot-devices",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Excluir dispositivo",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/iot-devices/6",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "iot-devices",
+                "6"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Alertas",
+      "description": "Gerenciamento de alertas do sistema de monitoramento",
+      "item": [
+        {
+          "name": "Listar todos os alertas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/alerts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "alerts"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Buscar alerta por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/alerts/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "alerts",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar alertas por talhão",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/alerts/field/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "alerts",
+                "field",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Listar alertas por status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/alerts/status/ACTIVE",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "alerts",
+                "status",
+                "ACTIVE"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Criar novo alerta",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fieldId\": 2,\n  \"fieldCropId\": 2,\n  \"alertType\": \"PEST_DETECTED\",\n  \"severity\": \"CRITICAL\",\n  \"message\": \"Presença de lagarta-da-soja detectada no Talhão A2\",\n  \"status\": \"ACTIVE\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/alerts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "alerts"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Atualizar alerta (resolver)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fieldId\": 1,\n  \"fieldCropId\": 1,\n  \"alertType\": \"LOW_MOISTURE\",\n  \"severity\": \"WARNING\",\n  \"message\": \"Umidade do solo normalizada após irrigação automática\",\n  \"status\": \"RESOLVED\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/alerts/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "alerts",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Excluir alerta",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/alerts/4",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "alerts",
+                "4"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

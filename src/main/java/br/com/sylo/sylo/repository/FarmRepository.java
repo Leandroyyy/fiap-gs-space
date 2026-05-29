@@ -1,0 +1,13 @@
+package br.com.sylo.sylo.repository;
+
+import br.com.sylo.sylo.entity.Farm;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface FarmRepository extends JpaRepository<Farm, Long> {
+    List<Farm> findByState(String state);
+    List<Farm> findByNameContainingIgnoreCase(String name);
+}
