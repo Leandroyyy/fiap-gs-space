@@ -100,7 +100,6 @@ sylo/
 │   ├── Sylo_API.postman_collection.json   # Collection Postman
 │   ├── cucumber-report.html               # Relatório de testes HTML
 │   ├── cucumber-report.json               # Relatório de testes JSON
-│   └── pitch.txt                          # Pitch do projeto
 ├── scripts/
 │   └── scriptu.sql                        # Script SQL original
 ├── src/
@@ -454,14 +453,6 @@ A aplicação já vem com dados de exemplo:
 - 4 tipos de cultura (Soja, Milho, Café, Alface)
 - 5 dispositivos IoT
 - 3 alertas
-
----
-
-## 👥 Integrantes
-
-| Nome | RM |
-|---|---|
-| *Preencher* | *Preencher* |
 
 ---
 
