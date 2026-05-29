@@ -1,0 +1,790 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< br.com.sylo:sylo >--------------------------
+[INFO] Building Sylo 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ sylo ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ sylo ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ sylo ---
+[INFO] Copying 7 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ sylo ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.3:test (default-test) @ sylo ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+May 29, 2026 11:41:08 AM io.cucumber.junit.platform.engine.DiscoverySelectorResolver warnWhenCucumberFeaturesPropertyIsUsed
+WARNING: Discovering tests using the cucumber.features property. Other discovery selectors are ignored!
+
+This is a work around for the limited JUnit 5 support in Maven and Gradle. Please request/upvote/sponsor/ect better support for JUnit 5 discovery selectors. For details see: https://github.com/cucumber/cucumber-jvm/pull/2498
+
+If you are using the JUnit 5 Suite Engine, Platform Launcher API or Console Launcher you should not use this property. Please consult the JUnit 5 documentation on test selection.
+[INFO] Running io.cucumber.junit.platform.engine.CucumberTestEngine
+11:41:08.878 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:41:08.949 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+11:41:09.059 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2026-05-29T11:41:09.139-03:00  INFO 72255 --- [sylo] [           main] b.c.sylo.sylo.bdd.CucumberSpringConfig   : Starting CucumberSpringConfig using Java 21.0.11 with PID 72255 (started by leandream in /Users/leandream/Workspace/sylo)
+2026-05-29T11:41:09.140-03:00  INFO 72255 --- [sylo] [           main] b.c.sylo.sylo.bdd.CucumberSpringConfig   : No active profile set, falling back to 1 default profile: "default"
+2026-05-29T11:41:09.385-03:00  INFO 72255 --- [sylo] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-29T11:41:09.409-03:00  INFO 72255 --- [sylo] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 5 JPA repository interfaces.
+2026-05-29T11:41:09.573-03:00  INFO 72255 --- [sylo] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-05-29T11:41:09.579-03:00  INFO 72255 --- [sylo] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-29T11:41:09.579-03:00  INFO 72255 --- [sylo] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-05-29T11:41:09.594-03:00  INFO 72255 --- [sylo] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-29T11:41:09.595-03:00  INFO 72255 --- [sylo] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 449 ms
+2026-05-29T11:41:09.643-03:00  INFO 72255 --- [sylo] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-29T11:41:09.663-03:00  INFO 72255 --- [sylo] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-05-29T11:41:09.674-03:00  INFO 72255 --- [sylo] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-29T11:41:09.764-03:00  INFO 72255 --- [sylo] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-29T11:41:09.773-03:00  INFO 72255 --- [sylo] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-29T11:41:09.836-03:00  INFO 72255 --- [sylo] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:sylodb user=SA
+2026-05-29T11:41:09.837-03:00  INFO 72255 --- [sylo] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-29T11:41:09.846-03:00  WARN 72255 --- [sylo] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-29T11:41:09.852-03:00  INFO 72255 --- [sylo] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-29T11:41:10.170-03:00  INFO 72255 --- [sylo] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-29T11:41:10.171-03:00  INFO 72255 --- [sylo] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-29T11:41:10.333-03:00  WARN 72255 --- [sylo] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-29T11:41:10.447-03:00  INFO 72255 --- [sylo] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:sylodb'
+2026-05-29T11:41:10.552-03:00  INFO 72255 --- [sylo] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 55690 (http) with context path '/'
+2026-05-29T11:41:10.556-03:00  INFO 72255 --- [sylo] [           main] b.c.sylo.sylo.bdd.CucumberSpringConfig   : Started CucumberSpringConfig in 1.501 seconds (process running for 2.144)
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (/Users/leandream/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+
+Cenário: Listar todos os alertas ativos                                # src/test/resources/features/alert.feature:7
+2026-05-29T11:41:10.847-03:00  INFO 72255 --- [sylo] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-29T11:41:10.847-03:00  INFO 72255 --- [sylo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-29T11:41:10.847-03:00  INFO 72255 --- [sylo] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema                     # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select a1_0.id,a1_0.alert_type,a1_0.created_at,a1_0.field_id,a1_0.field_crop_id,a1_0.message,a1_0.resolved_at,a1_0.severity,a1_0.status from alerts a1_0 where a1_0.status=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/alerts/status/ACTIVE" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                              # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas                       # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+  E a lista deve conter pelo menos 2 fazendas                          # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:10.968-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:10.969-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar novo alerta para um talhão                                # src/test/resources/features/alert.feature:14
+  Dado que eu tenho os dados de um novo alerta:                          # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoAlerta(io.cucumber.datatable.DataTable)
+    | fieldId     | 1                                          |
+    | fieldCropId | 1                                          |
+    | alertType   | PEST_DETECTED                              |
+    | severity    | CRITICAL                                   |
+    | message     | Presença de lagarta detectada no Talhão A1 |
+    | status      | ACTIVE                                     |
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: insert into alerts (alert_type,created_at,field_id,field_crop_id,message,resolved_at,severity,status,id) values (?,?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/alerts"                # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                                # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "alertType" com valor "PEST_DETECTED" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "severity" com valor "CRITICAL"       # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "status" com valor "ACTIVE"           # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+2026-05-29T11:41:11.014-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.014-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Resolver alerta existente deve preencher resolvedAt     # src/test/resources/features/alert.feature:28
+  Dado que eu tenho os dados de um novo alerta:                  # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoAlerta(io.cucumber.datatable.DataTable)
+    | fieldId     | 1                                  |
+    | fieldCropId | 1                                  |
+    | alertType   | LOW_MOISTURE                       |
+    | severity    | WARNING                            |
+    | message     | Umidade normalizada após irrigação |
+    | status      | RESOLVED                           |
+Hibernate: select a1_0.id,a1_0.alert_type,a1_0.created_at,a1_0.field_id,a1_0.field_crop_id,a1_0.message,a1_0.resolved_at,a1_0.severity,a1_0.status from alerts a1_0 where a1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: update alerts set alert_type=?,created_at=?,field_id=?,field_crop_id=?,message=?,resolved_at=?,severity=?,status=? where id=?
+  Quando eu enviar uma requisição PUT para "/api/alerts/1"       # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPUTPara(java.lang.String)
+  Então o status da resposta deve ser 200                        # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "status" com valor "RESOLVED" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "resolvedAt"                  # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampo(java.lang.String)
+2026-05-29T11:41:11.026-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.026-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Buscar alertas por talhão específico                    # src/test/resources/features/alert.feature:41
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema               # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select a1_0.id,a1_0.alert_type,a1_0.created_at,a1_0.field_id,a1_0.field_crop_id,a1_0.message,a1_0.resolved_at,a1_0.severity,a1_0.status from alerts a1_0 left join fields f1_0 on f1_0.id=a1_0.field_id where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/alerts/field/1" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                        # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas                 # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+2026-05-29T11:41:11.036-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.036-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar alerta sem tipo deve falhar com validação  # src/test/resources/features/alert.feature:47
+  Dado que eu tenho os dados de um novo alerta:           # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoAlerta(io.cucumber.datatable.DataTable)
+    | fieldId   | 1               |
+    | alertType | [empty]         |
+    | severity  | WARNING         |
+    | message   | Alerta sem tipo |
+    | status    | ACTIVE          |
+  Quando eu enviar uma requisição POST para "/api/alerts" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 400                 # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.046-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.046-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Excluir alerta existente                                               # src/test/resources/features/alert.feature:57
+  Dado que eu tenho os dados de um novo alerta:                                 # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoAlerta(io.cucumber.datatable.DataTable)
+    | fieldId   | 1                                        |
+    | alertType | TEMPORARY_ALERT                          |
+    | severity  | INFO                                     |
+    | message   | Alerta temporário para teste de exclusão |
+    | status    | ACTIVE                                   |
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: insert into alerts (alert_type,created_at,field_id,field_crop_id,message,resolved_at,severity,status,id) values (?,?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/alerts"                       # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                                       # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+Hibernate: select count(*) from alerts a1_0 where a1_0.id=?
+Hibernate: select a1_0.id,a1_0.alert_type,a1_0.created_at,a1_0.field_id,a1_0.field_crop_id,a1_0.message,a1_0.resolved_at,a1_0.severity,a1_0.status from alerts a1_0 where a1_0.id=?
+Hibernate: delete from alerts where id=?
+  Quando eu enviar uma requisição DELETE para o recurso criado em "/api/alerts" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoDELETEParaORecursoCriadoEm(java.lang.String)
+  Então o status da resposta deve ser 204                                       # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.180-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.180-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Listar todos os tipos de cultura                    # src/test/resources/features/crop_type.feature:7
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema           # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select ct1_0.id,ct1_0.created_at,ct1_0.description,ct1_0.ideal_max_ndvi,ct1_0.ideal_max_soil_moisture,ct1_0.ideal_max_temperature,ct1_0.ideal_min_ndvi,ct1_0.ideal_min_soil_moisture,ct1_0.ideal_min_temperature,ct1_0.name from crop_types ct1_0
+  Quando eu enviar uma requisição GET para "/api/crop-types" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                    # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas             # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+  E a lista deve conter pelo menos 4 fazendas                # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.189-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.190-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Buscar tipo de cultura por ID                         # src/test/resources/features/crop_type.feature:14
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema             # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select ct1_0.id,ct1_0.created_at,ct1_0.description,ct1_0.ideal_max_ndvi,ct1_0.ideal_max_soil_moisture,ct1_0.ideal_max_temperature,ct1_0.ideal_min_ndvi,ct1_0.ideal_min_soil_moisture,ct1_0.ideal_min_temperature,ct1_0.name from crop_types ct1_0 where ct1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/crop-types/1" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                      # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Soja"     # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+2026-05-29T11:41:11.199-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.200-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar novo tipo de cultura com parâmetros ideais     # src/test/resources/features/crop_type.feature:20
+  Dado que eu tenho os dados de um novo tipo de cultura:      # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoTipoDeCultura(io.cucumber.datatable.DataTable)
+    | name                 | Trigo                              |
+    | description          | Triticum aestivum - cereal inverno |
+    | idealMinSoilMoisture | 35.00                              |
+    | idealMaxSoilMoisture | 65.00                              |
+    | idealMinTemperature  | 10.00                              |
+    | idealMaxTemperature  | 24.00                              |
+    | idealMinNdvi         | 0.45                               |
+    | idealMaxNdvi         | 0.80                               |
+Hibernate: insert into crop_types (created_at,description,ideal_max_ndvi,ideal_max_soil_moisture,ideal_max_temperature,ideal_min_ndvi,ideal_min_soil_moisture,ideal_min_temperature,name,id) values (?,?,?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/crop-types" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                     # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Trigo"   # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "id"                       # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampo(java.lang.String)
+2026-05-29T11:41:11.209-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.209-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Excluir tipo de cultura e confirmar remoção                                # src/test/resources/features/crop_type.feature:35
+  Dado que eu tenho os dados de um novo tipo de cultura:                            # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoTipoDeCultura(io.cucumber.datatable.DataTable)
+    | name        | Cultura Temporária             |
+    | description | Cultura para teste de exclusão |
+Hibernate: insert into crop_types (created_at,description,ideal_max_ndvi,ideal_max_soil_moisture,ideal_max_temperature,ideal_min_ndvi,ideal_min_soil_moisture,ideal_min_temperature,name,id) values (?,?,?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/crop-types"                       # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                                           # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+Hibernate: select count(*) from crop_types ct1_0 where ct1_0.id=?
+Hibernate: select ct1_0.id,ct1_0.created_at,ct1_0.description,ct1_0.ideal_max_ndvi,ct1_0.ideal_max_soil_moisture,ct1_0.ideal_max_temperature,ct1_0.ideal_min_ndvi,ct1_0.ideal_min_soil_moisture,ct1_0.ideal_min_temperature,ct1_0.name from crop_types ct1_0 where ct1_0.id=?
+Hibernate: delete from crop_types where id=?
+  Quando eu enviar uma requisição DELETE para o recurso criado em "/api/crop-types" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoDELETEParaORecursoCriadoEm(java.lang.String)
+  Então o status da resposta deve ser 204                                           # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.218-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.218-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Listar todas as fazendas cadastradas           # src/test/resources/features/farm.feature:7
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema      # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Quando eu enviar uma requisição GET para "/api/farms" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200               # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas        # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+  E a lista deve conter pelo menos 2 fazendas           # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.225-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.226-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Buscar fazenda por ID existente                                # src/test/resources/features/farm.feature:14
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema                      # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/farms/1"               # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                               # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Fazenda Boa Vista" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "city" com valor "Ribeirão Preto"    # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+2026-05-29T11:41:11.234-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.234-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar nova fazenda com dados válidos                           # src/test/resources/features/farm.feature:21
+  Dado que eu tenho os dados de uma nova fazenda:                       # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmaNovaFazenda(io.cucumber.datatable.DataTable)
+    | name        | Fazenda Primavera               |
+    | description | Fazenda de hortaliças orgânicas |
+    | city        | Campinas                        |
+    | state       | SP                              |
+    | latitude    | -22.9099                        |
+    | longitude   | -47.0626                        |
+Hibernate: insert into farms (city,created_at,description,latitude,longitude,name,state,id) values (?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/farms"                # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                               # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Fazenda Primavera" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "id"                                 # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampo(java.lang.String)
+2026-05-29T11:41:11.242-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.242-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar fazenda sem nome deve falhar com validação # src/test/resources/features/farm.feature:34
+  Dado que eu tenho os dados de uma nova fazenda:         # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmaNovaFazenda(io.cucumber.datatable.DataTable)
+    | name        | [empty]          |
+    | description | Fazenda sem nome |
+    | city        | São Paulo        |
+    | state       | SP               |
+  Quando eu enviar uma requisição POST para "/api/farms"  # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 400                 # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.247-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.247-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Atualizar fazenda existente                                                 # src/test/resources/features/farm.feature:43
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema                                   # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+  E que eu tenho os dados atualizados da fazenda:                                    # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosAtualizadosDaFazenda(io.cucumber.datatable.DataTable)
+    | name        | Fazenda Boa Vista (Atualizada) |
+    | description | Fazenda de soja, milho e sorgo |
+    | city        | Ribeirão Preto                 |
+    | state       | SP                             |
+    | latitude    | -21.1767                       |
+    | longitude   | -47.8208                       |
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+Hibernate: update farms set city=?,created_at=?,description=?,latitude=?,longitude=?,name=?,state=? where id=?
+  Quando eu enviar uma requisição PUT para "/api/farms/1"                            # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPUTPara(java.lang.String)
+  Então o status da resposta deve ser 200                                            # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Fazenda Boa Vista (Atualizada)" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+2026-05-29T11:41:11.255-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.256-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Buscar fazenda com ID inexistente                  # src/test/resources/features/farm.feature:56
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/farms/999" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 404                   # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.260-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.260-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Listar todos os talhões                         # src/test/resources/features/field.feature:7
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema       # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/fields" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas         # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+  E a lista deve conter pelo menos 4 fazendas            # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.269-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.269-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Buscar talhões de uma fazenda específica               # src/test/resources/features/field.feature:14
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema              # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 left join farms f2_0 on f2_0.id=f1_0.farm_id where f2_0.id=?
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/fields/farm/1" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                       # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas                # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+  E a lista deve conter pelo menos 2 fazendas                   # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.277-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.277-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar novo talhão vinculado a uma fazenda                          # src/test/resources/features/field.feature:21
+  Dado que eu tenho os dados de um novo talhão:                             # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoTalhao(io.cucumber.datatable.DataTable)
+    | farmId       | 1         |
+    | name         | Talhão C1 |
+    | areaHectares | 30.00     |
+    | latitude     | -21.2000  |
+    | longitude    | -47.8500  |
+    | status       | ACTIVE    |
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+Hibernate: insert into fields (area_hectares,created_at,farm_id,latitude,longitude,name,status,id) values (?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/fields"                   # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                                   # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Talhão C1"             # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "farmName" com valor "Fazenda Boa Vista" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+2026-05-29T11:41:11.285-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.285-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar talhão sem nome deve falhar                # src/test/resources/features/field.feature:34
+  Dado que eu tenho os dados de um novo talhão:           # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoTalhao(io.cucumber.datatable.DataTable)
+    | farmId       | 1       |
+    | name         | [empty] |
+    | areaHectares | 10.00   |
+  Quando eu enviar uma requisição POST para "/api/fields" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 400                 # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.290-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.290-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar talhão com fazenda inexistente deve falhar # src/test/resources/features/field.feature:42
+  Dado que eu tenho os dados de um novo talhão:           # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoTalhao(io.cucumber.datatable.DataTable)
+    | farmId       | 999             |
+    | name         | Talhão Fantasma |
+    | areaHectares | 10.00           |
+    | status       | ACTIVE          |
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição POST para "/api/fields" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 404                 # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.295-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.295-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Listar todos os dispositivos IoT                     # src/test/resources/features/iot_device.feature:7
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema            # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select id1_0.id,id1_0.created_at,id1_0.device_type,id1_0.field_id,id1_0.latitude,id1_0.longitude,id1_0.name,id1_0.serial_number,id1_0.status from iot_devices id1_0
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/iot-devices" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                     # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas              # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+  E a lista deve conter pelo menos 5 fazendas                 # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.320-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.321-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Buscar dispositivos por talhão                               # src/test/resources/features/iot_device.feature:14
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema                    # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select id1_0.id,id1_0.created_at,id1_0.device_type,id1_0.field_id,id1_0.latitude,id1_0.longitude,id1_0.name,id1_0.serial_number,id1_0.status from iot_devices id1_0 left join fields f1_0 on f1_0.id=id1_0.field_id where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/iot-devices/field/1" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                             # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a lista deve conter pelo menos 2 fazendas                         # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.338-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.338-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Cadastrar novo sensor IoT                                          # src/test/resources/features/iot_device.feature:20
+  Dado que eu tenho os dados de um novo dispositivo IoT:                    # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoDispositivoIoT(io.cucumber.datatable.DataTable)
+    | fieldId      | 2                     |
+    | name         | Sensor Pluviômetro A2 |
+    | deviceType   | RAIN_GAUGE            |
+    | serialNumber | RG-001-A2             |
+    | status       | ONLINE                |
+    | latitude     | -21.1860              |
+    | longitude    | -47.8255              |
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: insert into iot_devices (created_at,device_type,field_id,latitude,longitude,name,serial_number,status,id) values (?,?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/iot-devices"              # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                                   # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Sensor Pluviômetro A2" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "deviceType" com valor "RAIN_GAUGE"      # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "status" com valor "ONLINE"              # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+2026-05-29T11:41:11.350-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.350-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Atualizar status de dispositivo para OFFLINE               # src/test/resources/features/iot_device.feature:35
+  Dado que eu tenho os dados de um novo dispositivo IoT:            # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoDispositivoIoT(io.cucumber.datatable.DataTable)
+    | fieldId      | 1                        |
+    | name         | Sensor Umidade Solo A1-1 |
+    | deviceType   | SOIL_MOISTURE            |
+    | serialNumber | SM-001-A1                |
+    | status       | MAINTENANCE              |
+    | latitude     | -21.1802                 |
+    | longitude    | -47.8305                 |
+Hibernate: select id1_0.id,id1_0.created_at,id1_0.device_type,id1_0.field_id,id1_0.latitude,id1_0.longitude,id1_0.name,id1_0.serial_number,id1_0.status from iot_devices id1_0 where id1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: update iot_devices set created_at=?,device_type=?,field_id=?,latitude=?,longitude=?,name=?,serial_number=?,status=? where id=?
+  Quando eu enviar uma requisição PUT para "/api/iot-devices/1"     # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPUTPara(java.lang.String)
+  Então o status da resposta deve ser 200                           # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "status" com valor "MAINTENANCE" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.573 s -- in io.cucumber.junit.platform.engine.CucumberTestEngine
+[INFO] Running br.com.sylo.sylo.CucumberRunnerTest
+[INFO] Running io.cucumber.junit.platform.engine.CucumberTestEngine
+2026-05-29T11:41:11.375-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.376-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Listar todos os alertas ativos                                # src/test/resources/features/alert.feature:7
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema                     # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select a1_0.id,a1_0.alert_type,a1_0.created_at,a1_0.field_id,a1_0.field_crop_id,a1_0.message,a1_0.resolved_at,a1_0.severity,a1_0.status from alerts a1_0 where a1_0.status=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/alerts/status/ACTIVE" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                              # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas                       # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+  E a lista deve conter pelo menos 2 fazendas                          # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.405-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.405-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar novo alerta para um talhão                                # src/test/resources/features/alert.feature:14
+  Dado que eu tenho os dados de um novo alerta:                          # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoAlerta(io.cucumber.datatable.DataTable)
+    | fieldId     | 1                                          |
+    | fieldCropId | 1                                          |
+    | alertType   | PEST_DETECTED                              |
+    | severity    | CRITICAL                                   |
+    | message     | Presença de lagarta detectada no Talhão A1 |
+    | status      | ACTIVE                                     |
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: insert into alerts (alert_type,created_at,field_id,field_crop_id,message,resolved_at,severity,status,id) values (?,?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/alerts"                # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                                # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "alertType" com valor "PEST_DETECTED" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "severity" com valor "CRITICAL"       # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "status" com valor "ACTIVE"           # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+2026-05-29T11:41:11.412-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.412-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Resolver alerta existente deve preencher resolvedAt     # src/test/resources/features/alert.feature:28
+  Dado que eu tenho os dados de um novo alerta:                  # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoAlerta(io.cucumber.datatable.DataTable)
+    | fieldId     | 1                                  |
+    | fieldCropId | 1                                  |
+    | alertType   | LOW_MOISTURE                       |
+    | severity    | WARNING                            |
+    | message     | Umidade normalizada após irrigação |
+    | status      | RESOLVED                           |
+Hibernate: select a1_0.id,a1_0.alert_type,a1_0.created_at,a1_0.field_id,a1_0.field_crop_id,a1_0.message,a1_0.resolved_at,a1_0.severity,a1_0.status from alerts a1_0 where a1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: update alerts set alert_type=?,created_at=?,field_id=?,field_crop_id=?,message=?,resolved_at=?,severity=?,status=? where id=?
+  Quando eu enviar uma requisição PUT para "/api/alerts/1"       # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPUTPara(java.lang.String)
+  Então o status da resposta deve ser 200                        # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "status" com valor "RESOLVED" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "resolvedAt"                  # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampo(java.lang.String)
+2026-05-29T11:41:11.419-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.419-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Buscar alertas por talhão específico                    # src/test/resources/features/alert.feature:41
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema               # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select a1_0.id,a1_0.alert_type,a1_0.created_at,a1_0.field_id,a1_0.field_crop_id,a1_0.message,a1_0.resolved_at,a1_0.severity,a1_0.status from alerts a1_0 left join fields f1_0 on f1_0.id=a1_0.field_id where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/alerts/field/1" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                        # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas                 # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+2026-05-29T11:41:11.426-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.427-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar alerta sem tipo deve falhar com validação  # src/test/resources/features/alert.feature:47
+  Dado que eu tenho os dados de um novo alerta:           # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoAlerta(io.cucumber.datatable.DataTable)
+    | fieldId   | 1               |
+    | alertType | [empty]         |
+    | severity  | WARNING         |
+    | message   | Alerta sem tipo |
+    | status    | ACTIVE          |
+  Quando eu enviar uma requisição POST para "/api/alerts" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 400                 # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.430-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.431-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Excluir alerta existente                                               # src/test/resources/features/alert.feature:57
+  Dado que eu tenho os dados de um novo alerta:                                 # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoAlerta(io.cucumber.datatable.DataTable)
+    | fieldId   | 1                                        |
+    | alertType | TEMPORARY_ALERT                          |
+    | severity  | INFO                                     |
+    | message   | Alerta temporário para teste de exclusão |
+    | status    | ACTIVE                                   |
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: insert into alerts (alert_type,created_at,field_id,field_crop_id,message,resolved_at,severity,status,id) values (?,?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/alerts"                       # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                                       # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+Hibernate: select count(*) from alerts a1_0 where a1_0.id=?
+Hibernate: select a1_0.id,a1_0.alert_type,a1_0.created_at,a1_0.field_id,a1_0.field_crop_id,a1_0.message,a1_0.resolved_at,a1_0.severity,a1_0.status from alerts a1_0 where a1_0.id=?
+Hibernate: delete from alerts where id=?
+  Quando eu enviar uma requisição DELETE para o recurso criado em "/api/alerts" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoDELETEParaORecursoCriadoEm(java.lang.String)
+  Então o status da resposta deve ser 204                                       # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.438-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.438-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Listar todos os tipos de cultura                    # src/test/resources/features/crop_type.feature:7
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema           # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select ct1_0.id,ct1_0.created_at,ct1_0.description,ct1_0.ideal_max_ndvi,ct1_0.ideal_max_soil_moisture,ct1_0.ideal_max_temperature,ct1_0.ideal_min_ndvi,ct1_0.ideal_min_soil_moisture,ct1_0.ideal_min_temperature,ct1_0.name from crop_types ct1_0
+  Quando eu enviar uma requisição GET para "/api/crop-types" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                    # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas             # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+  E a lista deve conter pelo menos 4 fazendas                # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.444-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.445-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Buscar tipo de cultura por ID                         # src/test/resources/features/crop_type.feature:14
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema             # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select ct1_0.id,ct1_0.created_at,ct1_0.description,ct1_0.ideal_max_ndvi,ct1_0.ideal_max_soil_moisture,ct1_0.ideal_max_temperature,ct1_0.ideal_min_ndvi,ct1_0.ideal_min_soil_moisture,ct1_0.ideal_min_temperature,ct1_0.name from crop_types ct1_0 where ct1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/crop-types/1" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                      # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Soja"     # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+2026-05-29T11:41:11.451-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.451-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar novo tipo de cultura com parâmetros ideais     # src/test/resources/features/crop_type.feature:20
+  Dado que eu tenho os dados de um novo tipo de cultura:      # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoTipoDeCultura(io.cucumber.datatable.DataTable)
+    | name                 | Trigo                              |
+    | description          | Triticum aestivum - cereal inverno |
+    | idealMinSoilMoisture | 35.00                              |
+    | idealMaxSoilMoisture | 65.00                              |
+    | idealMinTemperature  | 10.00                              |
+    | idealMaxTemperature  | 24.00                              |
+    | idealMinNdvi         | 0.45                               |
+    | idealMaxNdvi         | 0.80                               |
+Hibernate: insert into crop_types (created_at,description,ideal_max_ndvi,ideal_max_soil_moisture,ideal_max_temperature,ideal_min_ndvi,ideal_min_soil_moisture,ideal_min_temperature,name,id) values (?,?,?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/crop-types" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                     # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Trigo"   # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "id"                       # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampo(java.lang.String)
+2026-05-29T11:41:11.456-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.456-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Excluir tipo de cultura e confirmar remoção                                # src/test/resources/features/crop_type.feature:35
+  Dado que eu tenho os dados de um novo tipo de cultura:                            # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoTipoDeCultura(io.cucumber.datatable.DataTable)
+    | name        | Cultura Temporária             |
+    | description | Cultura para teste de exclusão |
+Hibernate: insert into crop_types (created_at,description,ideal_max_ndvi,ideal_max_soil_moisture,ideal_max_temperature,ideal_min_ndvi,ideal_min_soil_moisture,ideal_min_temperature,name,id) values (?,?,?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/crop-types"                       # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                                           # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+Hibernate: select count(*) from crop_types ct1_0 where ct1_0.id=?
+Hibernate: select ct1_0.id,ct1_0.created_at,ct1_0.description,ct1_0.ideal_max_ndvi,ct1_0.ideal_max_soil_moisture,ct1_0.ideal_max_temperature,ct1_0.ideal_min_ndvi,ct1_0.ideal_min_soil_moisture,ct1_0.ideal_min_temperature,ct1_0.name from crop_types ct1_0 where ct1_0.id=?
+Hibernate: delete from crop_types where id=?
+  Quando eu enviar uma requisição DELETE para o recurso criado em "/api/crop-types" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoDELETEParaORecursoCriadoEm(java.lang.String)
+  Então o status da resposta deve ser 204                                           # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.463-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.463-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Listar todas as fazendas cadastradas           # src/test/resources/features/farm.feature:7
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema      # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Quando eu enviar uma requisição GET para "/api/farms" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200               # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas        # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+  E a lista deve conter pelo menos 2 fazendas           # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.469-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.470-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Buscar fazenda por ID existente                                # src/test/resources/features/farm.feature:14
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema                      # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/farms/1"               # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                               # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Fazenda Boa Vista" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "city" com valor "Ribeirão Preto"    # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+2026-05-29T11:41:11.475-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.475-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar nova fazenda com dados válidos                           # src/test/resources/features/farm.feature:21
+  Dado que eu tenho os dados de uma nova fazenda:                       # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmaNovaFazenda(io.cucumber.datatable.DataTable)
+    | name        | Fazenda Primavera               |
+    | description | Fazenda de hortaliças orgânicas |
+    | city        | Campinas                        |
+    | state       | SP                              |
+    | latitude    | -22.9099                        |
+    | longitude   | -47.0626                        |
+Hibernate: insert into farms (city,created_at,description,latitude,longitude,name,state,id) values (?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/farms"                # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                               # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Fazenda Primavera" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "id"                                 # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampo(java.lang.String)
+2026-05-29T11:41:11.479-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.479-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar fazenda sem nome deve falhar com validação # src/test/resources/features/farm.feature:34
+  Dado que eu tenho os dados de uma nova fazenda:         # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmaNovaFazenda(io.cucumber.datatable.DataTable)
+    | name        | [empty]          |
+    | description | Fazenda sem nome |
+    | city        | São Paulo        |
+    | state       | SP               |
+  Quando eu enviar uma requisição POST para "/api/farms"  # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 400                 # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.482-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.482-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Atualizar fazenda existente                                                 # src/test/resources/features/farm.feature:43
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema                                   # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+  E que eu tenho os dados atualizados da fazenda:                                    # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosAtualizadosDaFazenda(io.cucumber.datatable.DataTable)
+    | name        | Fazenda Boa Vista (Atualizada) |
+    | description | Fazenda de soja, milho e sorgo |
+    | city        | Ribeirão Preto                 |
+    | state       | SP                             |
+    | latitude    | -21.1767                       |
+    | longitude   | -47.8208                       |
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição PUT para "/api/farms/1"                            # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPUTPara(java.lang.String)
+  Então o status da resposta deve ser 200                                            # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Fazenda Boa Vista (Atualizada)" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+2026-05-29T11:41:11.488-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.488-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Buscar fazenda com ID inexistente                  # src/test/resources/features/farm.feature:56
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/farms/999" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 404                   # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.492-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.492-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Listar todos os talhões                         # src/test/resources/features/field.feature:7
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema       # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/fields" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas         # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+  E a lista deve conter pelo menos 4 fazendas            # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.499-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.500-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Buscar talhões de uma fazenda específica               # src/test/resources/features/field.feature:14
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema              # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 left join farms f2_0 on f2_0.id=f1_0.farm_id where f2_0.id=?
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/fields/farm/1" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                       # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas                # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+  E a lista deve conter pelo menos 2 fazendas                   # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.506-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.507-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar novo talhão vinculado a uma fazenda                          # src/test/resources/features/field.feature:21
+  Dado que eu tenho os dados de um novo talhão:                             # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoTalhao(io.cucumber.datatable.DataTable)
+    | farmId       | 1         |
+    | name         | Talhão C1 |
+    | areaHectares | 30.00     |
+    | latitude     | -21.2000  |
+    | longitude    | -47.8500  |
+    | status       | ACTIVE    |
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+Hibernate: insert into fields (area_hectares,created_at,farm_id,latitude,longitude,name,status,id) values (?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/fields"                   # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                                   # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Talhão C1"             # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "farmName" com valor "Fazenda Boa Vista" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+2026-05-29T11:41:11.512-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.512-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar talhão sem nome deve falhar                # src/test/resources/features/field.feature:34
+  Dado que eu tenho os dados de um novo talhão:           # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoTalhao(io.cucumber.datatable.DataTable)
+    | farmId       | 1       |
+    | name         | [empty] |
+    | areaHectares | 10.00   |
+  Quando eu enviar uma requisição POST para "/api/fields" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 400                 # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.516-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.516-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Criar talhão com fazenda inexistente deve falhar # src/test/resources/features/field.feature:42
+  Dado que eu tenho os dados de um novo talhão:           # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoTalhao(io.cucumber.datatable.DataTable)
+    | farmId       | 999             |
+    | name         | Talhão Fantasma |
+    | areaHectares | 10.00           |
+    | status       | ACTIVE          |
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição POST para "/api/fields" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 404                 # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+2026-05-29T11:41:11.519-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.520-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Listar todos os dispositivos IoT                     # src/test/resources/features/iot_device.feature:7
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema            # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select id1_0.id,id1_0.created_at,id1_0.device_type,id1_0.field_id,id1_0.latitude,id1_0.longitude,id1_0.name,id1_0.serial_number,id1_0.status from iot_devices id1_0
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/iot-devices" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                     # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter uma lista de fazendas              # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterUmaLista()
+  E a lista deve conter pelo menos 5 fazendas                 # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.527-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.527-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Buscar dispositivos por talhão                               # src/test/resources/features/iot_device.feature:14
+Hibernate: select f1_0.id,f1_0.city,f1_0.created_at,f1_0.description,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.state from farms f1_0
+  Dado que existem fazendas cadastradas no sistema                    # br.com.sylo.sylo.bdd.CommonSteps.queExistemFazendasCadastradasNoSistema()
+Hibernate: select id1_0.id,id1_0.created_at,id1_0.device_type,id1_0.field_id,id1_0.latitude,id1_0.longitude,id1_0.name,id1_0.serial_number,id1_0.status from iot_devices id1_0 left join fields f1_0 on f1_0.id=id1_0.field_id where f1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição GET para "/api/iot-devices/field/1" # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoGETPara(java.lang.String)
+  Então o status da resposta deve ser 200                             # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a lista deve conter pelo menos 2 fazendas                         # br.com.sylo.sylo.bdd.CommonSteps.aListaDeveConterPeloMenosNFazendas(int)
+2026-05-29T11:41:11.533-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.533-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Cadastrar novo sensor IoT                                          # src/test/resources/features/iot_device.feature:20
+  Dado que eu tenho os dados de um novo dispositivo IoT:                    # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoDispositivoIoT(io.cucumber.datatable.DataTable)
+    | fieldId      | 2                     |
+    | name         | Sensor Pluviômetro A2 |
+    | deviceType   | RAIN_GAUGE            |
+    | serialNumber | RG-001-A2             |
+    | status       | ONLINE                |
+    | latitude     | -21.1860              |
+    | longitude    | -47.8255              |
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+Hibernate: insert into iot_devices (created_at,device_type,field_id,latitude,longitude,name,serial_number,status,id) values (?,?,?,?,?,?,?,?,default)
+  Quando eu enviar uma requisição POST para "/api/iot-devices"              # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPOSTPara(java.lang.String)
+  Então o status da resposta deve ser 201                                   # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "name" com valor "Sensor Pluviômetro A2" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "deviceType" com valor "RAIN_GAUGE"      # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+  E a resposta deve conter o campo "status" com valor "ONLINE"              # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+2026-05-29T11:41:11.538-03:00  INFO 72255 --- [sylo] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [br.com.sylo.sylo.bdd.CucumberSpringConfig]: CucumberSpringConfig does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-05-29T11:41:11.538-03:00  INFO 72255 --- [sylo] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration br.com.sylo.sylo.SyloApplication for test class br.com.sylo.sylo.bdd.CucumberSpringConfig
+
+Cenário: Atualizar status de dispositivo para OFFLINE               # src/test/resources/features/iot_device.feature:35
+  Dado que eu tenho os dados de um novo dispositivo IoT:            # br.com.sylo.sylo.bdd.CommonSteps.queEuTenhoOsDadosDeUmNovoDispositivoIoT(io.cucumber.datatable.DataTable)
+    | fieldId      | 1                        |
+    | name         | Sensor Umidade Solo A1-1 |
+    | deviceType   | SOIL_MOISTURE            |
+    | serialNumber | SM-001-A1                |
+    | status       | MAINTENANCE              |
+    | latitude     | -21.1802                 |
+    | longitude    | -47.8305                 |
+Hibernate: select id1_0.id,id1_0.created_at,id1_0.device_type,id1_0.field_id,id1_0.latitude,id1_0.longitude,id1_0.name,id1_0.serial_number,id1_0.status from iot_devices id1_0 where id1_0.id=?
+Hibernate: select f1_0.id,f1_0.area_hectares,f1_0.created_at,f1_0.farm_id,f1_0.latitude,f1_0.longitude,f1_0.name,f1_0.status from fields f1_0 where f1_0.id=?
+  Quando eu enviar uma requisição PUT para "/api/iot-devices/1"     # br.com.sylo.sylo.bdd.CommonSteps.euEnviarUmaRequisicaoPUTPara(java.lang.String)
+  Então o status da resposta deve ser 200                           # br.com.sylo.sylo.bdd.CommonSteps.oStatusDaRespostaDeveSer(int)
+  E a resposta deve conter o campo "status" com valor "MAINTENANCE" # br.com.sylo.sylo.bdd.CommonSteps.aRespostaDeveConterOCampoComValor(java.lang.String,java.lang.String)
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.173 s -- in io.cucumber.junit.platform.engine.CucumberTestEngine
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.179 s -- in br.com.sylo.sylo.CucumberRunnerTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.301 s
+[INFO] Finished at: 2026-05-29T11:41:11-03:00
+[INFO] ------------------------------------------------------------------------

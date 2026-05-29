@@ -1,18 +1,23 @@
 package br.com.sylo.sylo.bdd;
 
-import io.cucumber.java.pt.Dado;
-import io.cucumber.java.pt.Quando;
-import io.cucumber.java.pt.E;
-import io.cucumber.java.pt.Então;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+
+import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.E;
+import io.cucumber.java.pt.Então;
+import io.cucumber.java.pt.Quando;
 
 public class CommonSteps {
 
@@ -35,49 +40,37 @@ public class CommonSteps {
     @Dado("que eu tenho os dados de uma nova fazenda:")
     public void queEuTenhoOsDadosDeUmaNovaFazenda(io.cucumber.datatable.DataTable dataTable) {
         requestBody = new HashMap<>();
-        dataTable.asMap(String.class, String.class).forEach((key, value) ->
-                requestBody.put(key, value)
-        );
+        dataTable.asMap(String.class, String.class).forEach((key, value) -> requestBody.put(key, value));
     }
 
     @Dado("que eu tenho os dados atualizados da fazenda:")
     public void queEuTenhoOsDadosAtualizadosDaFazenda(io.cucumber.datatable.DataTable dataTable) {
         requestBody = new HashMap<>();
-        dataTable.asMap(String.class, String.class).forEach((key, value) ->
-                requestBody.put(key, value)
-        );
+        dataTable.asMap(String.class, String.class).forEach((key, value) -> requestBody.put(key, value));
     }
 
     @Dado("que eu tenho os dados de um novo talhão:")
     public void queEuTenhoOsDadosDeUmNovoTalhao(io.cucumber.datatable.DataTable dataTable) {
         requestBody = new HashMap<>();
-        dataTable.asMap(String.class, String.class).forEach((key, value) ->
-                requestBody.put(key, value)
-        );
+        dataTable.asMap(String.class, String.class).forEach((key, value) -> requestBody.put(key, value));
     }
 
     @Dado("que eu tenho os dados de um novo alerta:")
     public void queEuTenhoOsDadosDeUmNovoAlerta(io.cucumber.datatable.DataTable dataTable) {
         requestBody = new HashMap<>();
-        dataTable.asMap(String.class, String.class).forEach((key, value) ->
-                requestBody.put(key, value)
-        );
+        dataTable.asMap(String.class, String.class).forEach((key, value) -> requestBody.put(key, value));
     }
 
     @Dado("que eu tenho os dados de um novo dispositivo IoT:")
     public void queEuTenhoOsDadosDeUmNovoDispositivoIoT(io.cucumber.datatable.DataTable dataTable) {
         requestBody = new HashMap<>();
-        dataTable.asMap(String.class, String.class).forEach((key, value) ->
-                requestBody.put(key, value)
-        );
+        dataTable.asMap(String.class, String.class).forEach((key, value) -> requestBody.put(key, value));
     }
 
     @Dado("que eu tenho os dados de um novo tipo de cultura:")
     public void queEuTenhoOsDadosDeUmNovoTipoDeCultura(io.cucumber.datatable.DataTable dataTable) {
         requestBody = new HashMap<>();
-        dataTable.asMap(String.class, String.class).forEach((key, value) ->
-                requestBody.put(key, value)
-        );
+        dataTable.asMap(String.class, String.class).forEach((key, value) -> requestBody.put(key, value));
     }
 
     // ================= QUANDO =================
@@ -169,7 +162,8 @@ public class CommonSteps {
         StringBuilder sb = new StringBuilder("{");
         boolean first = true;
         for (Map.Entry<String, String> entry : requestBody.entrySet()) {
-            if (!first) sb.append(",");
+            if (!first)
+                sb.append(",");
             first = false;
 
             String key = entry.getKey();
@@ -195,7 +189,8 @@ public class CommonSteps {
     }
 
     private boolean isNumeric(String str) {
-        if (str == null || str.isBlank()) return false;
+        if (str == null || str.isBlank())
+            return false;
         try {
             Double.parseDouble(str);
             return true;
