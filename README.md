@@ -248,12 +248,12 @@ A aplicação estará disponível em **http://localhost:8080**.
 
 O backend expõe **27 endpoints** organizados em 6 domínios:
 
-### Autenticação (`/auth`) — rotas públicas
+### Autenticação (`/auth`)
  
 | Método | Endpoint | Descrição |
 |---|---|---|
 | `POST` | `/auth/register` | Cadastrar usuário com senha criptografada (BCrypt) |
-| `POST` | `/auth/login` | Login — retorna token JWT |
+| `POST` | `/auth/login` | Login (retorna token JWT) |
 
 ### Fazendas (`/api/farms`)
 
