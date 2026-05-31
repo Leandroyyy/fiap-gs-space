@@ -64,7 +64,7 @@ O projeto segue a **arquitetura em camadas** do Spring Boot:
 └──────────────────┬──────────────────────────┘
                    ▼
 ┌─────────────────────────────────────────────┐
-│           Security Layer (NOVO)              │
+│           Security Layer             │
 │  JwtFilter — valida token em toda requisição │
 └──────────────────┬──────────────────────────┘
                    ▼
@@ -72,14 +72,14 @@ O projeto segue a **arquitetura em camadas** do Spring Boot:
 │             Controller Layer                 │
 │  (REST endpoints + Swagger annotations)      │
 │  FarmController, FieldController, etc.       │
-│  AuthController (NOVO)                       │
+│  AuthController                      │
 └──────────────────┬──────────────────────────┘
                    ▼
 ┌─────────────────────────────────────────────┐
 │              Service Layer                   │
 │  (Lógica de negócio + Transações)            │
 │  FarmService, FieldService, etc.             │
-│  UserService (NOVO)                          │
+│  UserService                        │
 └──────────────────┬──────────────────────────┘
                    ▼
 ┌─────────────────────────────────────────────┐
