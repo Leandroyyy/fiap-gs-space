@@ -1,16 +1,17 @@
 # 🌿 Sylo - Smart Farming Platform
-
+ 
 **Plataforma de agricultura inteligente** que integra dados de sensores IoT, observações de satélite e regras de decisão para automatizar o gerenciamento agrícola, gerar alertas e otimizar a produção.
-
+ 
 > Projeto desenvolvido como Global Solution para a FIAP.
-
+ 
 ---
-
+ 
 ## 📋 Índice
-
+ 
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Stack Tecnológica](#-stack-tecnológica)
 - [Arquitetura](#-arquitetura)
+- [Segurança](#-segurança)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
 - [Como Executar](#-como-executar)
 - [Endpoints da API](#-endpoints-da-api)
@@ -18,59 +19,67 @@
 - [Testes BDD](#-testes-bdd)
 - [Banco de Dados](#-banco-de-dados)
 - [Integrantes](#-integrantes)
-
 ---
-
+ 
 ## 🎯 Sobre o Projeto
-
+ 
 O **Sylo** é uma solução backend para gestão agrícola inteligente que permite:
-
+ 
 - **Gerenciar fazendas e talhões** com geolocalização
 - **Cadastrar tipos de cultura** com parâmetros ideais de solo, temperatura e NDVI
 - **Monitorar dispositivos IoT** (sensores de umidade, temperatura, estações meteorológicas)
 - **Gerar e gerenciar alertas** automáticos baseados em condições das lavouras
 - **Automatizar ações** de irrigação e manutenção de dispositivos
-
 O sistema foi projetado para atender o agronegócio brasileiro, com dados de fazendas reais em SP e MG, culturas como soja, milho, café e alface, e integração com fontes de dados como Sentinel-2 e Landsat-8.
-
+ 
 ---
-
+ 
 ## 🛠 Stack Tecnológica
-
+ 
 | Tecnologia | Versão | Finalidade |
 |---|---|---|
 | **Java** | 21 | Linguagem principal |
 | **Spring Boot** | 3.4.5 | Framework backend |
+| **Spring Security** | 6.4.5 | Autenticação e autorização |
 | **Spring Data JPA** | 3.4.x | Persistência de dados |
 | **Hibernate** | 6.6.x | ORM |
 | **H2 Database** | 2.3.x | Banco de dados em memória |
+| **JJWT** | 0.12.6 | Geração e validação de tokens JWT |
+| **BCrypt** | — | Hash de senhas |
 | **SpringDoc OpenAPI** | 2.8.8 | Documentação Swagger UI |
 | **Bean Validation** | 3.1 | Validação de entrada |
 | **Cucumber** | 7.22.0 | Testes BDD (Gherkin) |
 | **JUnit 5** | 5.11.x | Framework de testes |
 | **Maven** | 3.9.x | Build e dependências |
-
+ 
 ---
-
+ 
 ## 🏗 Arquitetura
-
+ 
 O projeto segue a **arquitetura em camadas** do Spring Boot:
-
+ 
 ```
 ┌─────────────────────────────────────────────┐
 │               HTTP Request                   │
 └──────────────────┬──────────────────────────┘
                    ▼
 ┌─────────────────────────────────────────────┐
+│           Security Layer             │
+│  JwtFilter — valida token em toda requisição │
+└──────────────────┬──────────────────────────┘
+                   ▼
+┌─────────────────────────────────────────────┐
 │             Controller Layer                 │
 │  (REST endpoints + Swagger annotations)      │
 │  FarmController, FieldController, etc.       │
+│  AuthController                      │
 └──────────────────┬──────────────────────────┘
                    ▼
 ┌─────────────────────────────────────────────┐
 │              Service Layer                   │
 │  (Lógica de negócio + Transações)            │
 │  FarmService, FieldService, etc.             │
+│  UserService                        │
 └──────────────────┬──────────────────────────┘
                    ▼
 ┌─────────────────────────────────────────────┐
@@ -84,16 +93,62 @@ O projeto segue a **arquitetura em camadas** do Spring Boot:
 │         (In-memory, SQL init)                │
 └─────────────────────────────────────────────┘
 ```
-
-**Componentes adicionais:**
-- **DTOs** (Request/Response) — separação entre representação da API e entidades JPA
-- **GlobalExceptionHandler** — tratamento centralizado de erros (400, 404, 500)
-- **OpenApiConfig** — configuração do Swagger UI com metadados do projeto
-
+ 
 ---
-
+ 
+## 🔒 Segurança
+ 
+A aplicação implementa autenticação e proteção de dados seguindo boas práticas de segurança.
+ 
+### Sistema de Login com Senha Criptografada
+ 
+O endpoint `POST /auth/register` recebe a senha em texto plano e armazena **apenas o hash BCrypt** (custo 12). A senha original nunca é salva nem logada.
+ 
+O endpoint `POST /auth/login` valida as credenciais via Spring Security, que compara o hash automaticamente. Em caso de sucesso, retorna um **token JWT** assinado com HMAC-SHA256, válido por 1 hora.
+ 
+Todas as rotas `/api/**` exigem o token no cabeçalho:
+```
+Authorization: Bearer <token>
+```
+ 
+### Prática 1 — Validação de Entrada (Bean Validation)
+ 
+Os DTOs de registro aplicam regras antes de qualquer lógica de negócio:
+ 
+- `@Email` — rejeita e-mails com formato inválido
+- `@Size(min=8, max=72)` — limita o tamanho da senha
+- `@Pattern` — exige ao menos 1 letra maiúscula, 1 número e 1 caractere especial
+Exemplo de senha rejeitada: `123456` → **400 Bad Request**
+Exemplo de senha aceita: `Sylo@2026` → **201 Created**
+ 
+### Prática 2 — Autenticação Stateless com JWT
+ 
+Nenhuma sessão HTTP é criada no servidor. Cada requisição valida o token de forma independente via `JwtFilter`. Tokens expirados ou adulterados retornam **401 Unauthorized** com mensagem genérica — sem revelar detalhes internos.
+ 
+### Usuários disponíveis para teste
+ 
+| E-mail | Senha | Perfil |
+|---|---|---|
+| `admin@sylo.com` | `Admin@123` | Administrador |
+| `user@sylo.com` | `User@1234` | Usuário comum |
+ 
+### Arquivos adicionados
+ 
+| Arquivo | Descrição |
+|---|---|
+| `config/SecurityConfig.java` | Configuração central do Spring Security |
+| `security/JwtUtil.java` | Geração e validação de tokens JWT |
+| `security/JwtFilter.java` | Filtro que intercepta e valida o token em toda requisição |
+| `auth/dto/RegisterRequest.java` | DTO de registro com validações de senha |
+| `auth/dto/LoginRequest.java` | DTO de login |
+| `auth/dto/AuthResponse.java` | DTO de resposta com token JWT |
+| `auth/service/UserService.java` | Serviço de usuários com hash BCrypt |
+| `auth/controller/AuthController.java` | Endpoints `/auth/register` e `/auth/login` |
+ 
+---
+ 
 ## 📂 Estrutura do Projeto
-
+ 
 ```
 sylo/
 ├── docs/
@@ -108,6 +163,19 @@ sylo/
 │   │   │   ├── SyloApplication.java       # Main class
 │   │   │   ├── config/
 │   │   │   │   └── OpenApiConfig.java     # Swagger config
+│   │   │   │   └── SecurityConfig.java        
+│   │   │   ├── security/                      
+│   │   │   │   ├── JwtUtil.java               
+│   │   │   │   └── JwtFilter.java             
+│   │   │   ├── auth/                          
+│   │   │   │   ├── controller/
+│   │   │   │   │   └── AuthController.java    
+│   │   │   │   ├── service/
+│   │   │   │   │   └── UserService.java       
+│   │   │   │   └── dto/
+│   │   │   │       ├── RegisterRequest.java   
+│   │   │   │       ├── LoginRequest.java      
+│   │   │   │       └── AuthResponse.java      
 │   │   │   ├── controller/
 │   │   │   │   ├── FarmController.java
 │   │   │   │   ├── FieldController.java
@@ -115,53 +183,33 @@ sylo/
 │   │   │   │   ├── IotDeviceController.java
 │   │   │   │   └── AlertController.java
 │   │   │   ├── service/
-│   │   │   │   ├── FarmService.java
-│   │   │   │   ├── FieldService.java
-│   │   │   │   ├── CropTypeService.java
-│   │   │   │   ├── IotDeviceService.java
-│   │   │   │   └── AlertService.java
 │   │   │   ├── repository/
-│   │   │   │   ├── FarmRepository.java
-│   │   │   │   ├── FieldRepository.java
-│   │   │   │   ├── CropTypeRepository.java
-│   │   │   │   ├── IotDeviceRepository.java
-│   │   │   │   └── AlertRepository.java
 │   │   │   ├── entity/
-│   │   │   │   ├── Farm.java
-│   │   │   │   ├── Field.java
-│   │   │   │   ├── CropType.java
-│   │   │   │   ├── IotDevice.java
-│   │   │   │   └── Alert.java
 │   │   │   ├── dto/
-│   │   │   │   ├── Farm[Request|Response]DTO.java
-│   │   │   │   ├── Field[Request|Response]DTO.java
-│   │   │   │   ├── CropType[Request|Response]DTO.java
-│   │   │   │   ├── IotDevice[Request|Response]DTO.java
-│   │   │   │   └── Alert[Request|Response]DTO.java
 │   │   │   └── exception/
-│   │   │       └── GlobalExceptionHandler.java
 │   │   └── resources/
 │   │       ├── application.properties
-│   │       ├── schema.sql                 # DDL do banco
-│   │       └── data.sql                   # Dados seed
+│   │       ├── schema.sql
+│   │       └── data.sql
 │   └── test/
 │       ├── java/br/com/sylo/sylo/
-│       │   ├── CucumberRunnerTest.java    # Runner BDD
+│       │   ├── CucumberRunnerTest.java
 │       │   └── bdd/
 │       │       ├── CucumberSpringConfig.java
-│       │       └── CommonSteps.java       # Step definitions
+│       │       └── CommonSteps.java
 │       └── resources/
 │           ├── features/
-│           │   ├── farm.feature           # 6 cenários
-│           │   ├── field.feature          # 5 cenários
-│           │   ├── crop_type.feature      # 4 cenários
-│           │   ├── iot_device.feature     # 4 cenários
-│           │   └── alert.feature          # 6 cenários
+│           │   ├── farm.feature
+│           │   ├── field.feature
+│           │   ├── crop_type.feature
+│           │   ├── iot_device.feature
+│           │   ├── alert.feature
+│           │   └── auth.feature               ← NOVO
 │           ├── cucumber.properties
 │           └── junit-platform.properties
 └── pom.xml
 ```
-
+ 
 ---
 
 ## 🚀 Como Executar
@@ -198,7 +246,14 @@ A aplicação estará disponível em **http://localhost:8080**.
 
 ## 🔗 Endpoints da API
 
-O backend expõe **27 endpoints** organizados em 5 domínios:
+O backend expõe **27 endpoints** organizados em 6 domínios:
+
+### Autenticação (`/auth`)
+ 
+| Método | Endpoint | Descrição |
+|---|---|---|
+| `POST` | `/auth/register` | Cadastrar usuário com senha criptografada (BCrypt) |
+| `POST` | `/auth/login` | Login (retorna token JWT) |
 
 ### Fazendas (`/api/farms`)
 
@@ -338,9 +393,13 @@ Também disponibilizamos uma **Postman Collection** em `docs/Sylo_API.postman_co
 
 Os testes E2E foram implementados com **Cucumber + Gherkin** seguindo a abordagem **BDD (Behavior-Driven Development)**.
 
+Os cenários são executados a partir de `src/test/resources/features`, com as definições de passos em `src/test/java/br/com/sylo/sylo/bdd`.
+
+Como a API agora exige **Bearer JWT** para os endpoints protegidos, os testes criam um usuário de teste dinamicamente via `/auth/register` e anexam o token `Authorization: Bearer ...` em todas as requisições `/api/*`.
+
 ### Cenários de Teste
 
-São **25 cenários** distribuídos em 5 funcionalidades:
+São **27 cenários** distribuídos em 6 funcionalidades:
 
 | Funcionalidade | Cenários | Arquivo |
 |---|---|---|
@@ -349,6 +408,7 @@ São **25 cenários** distribuídos em 5 funcionalidades:
 | Tipos de Cultura | 4 | `crop_type.feature` |
 | Dispositivos IoT | 4 | `iot_device.feature` |
 | Alertas | 6 | `alert.feature` |
+| Segurança | 2 | `auth.feature` |
 
 ### Exemplo de cenário Gherkin
 
@@ -400,9 +460,10 @@ Cenário: Resolver alerta (preenche resolvedAt)           ✅ PASS
 Cenário: Buscar alertas por talhão específico            ✅ PASS
 Cenário: Criar alerta sem tipo deve falhar               ✅ PASS
 Cenário: Excluir alerta existente                        ✅ PASS
-
+Cenário: Validar autenticação JWT em endpoints protegidos ✅ PASS
+Cenário: Executar requisições `/api/*` com cabeçalho `Authorization: Bearer ...` ✅ PASS
 ──────────────────────────────────────────────
-25 cenários | 25 aprovados | 0 falhas
+27 cenários | 27 aprovados | 0 falhas
 BUILD SUCCESS
 ──────────────────────────────────────────────
 ```

@@ -1,0 +1,9 @@
+package br.com.sylo.sylo.auth.dto;
+
+public record AuthResponse(
+        String token,
+        String tokenType,
+        long   expiresIn,
+        String email,
+        String name
+) {}
